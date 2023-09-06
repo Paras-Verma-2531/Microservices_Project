@@ -1,13 +1,16 @@
-const express=require('express');
-const Book=express();
-const connectDb=require('./dbConnect');
-const PORT_NO=4000;
+const express = require("express");
+const { showBookController } = require("./controllers/bookController");
+const App = express();
+const connectDb = require("./dbConnect");
+const bookRouter = require("./router/bookRouter");
+const PORT_NO = 4000;
 //middlewares
-Book.use(express.json());//body-parser
+App.use(express.json()); //body-parser
+//calling to API's
+App.use("/s1", bookRouter);
 //connection to Database
 connectDb();
 //listen to the server
-Book.listen(PORT_NO,()=>
-{
-   console.log('listening on port-->',PORT_NO);
-})
+App.listen(PORT_NO, () => {
+  console.log("listening on port-->", PORT_NO);
+});
