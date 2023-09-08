@@ -13,11 +13,17 @@ const orderSchema = new mongoose.Schema({
   },
   initialDate: {
     type: Date,
-    required: true,
+    default:Date.now,
+   
   },
   deliveryDate: {
     type: Date,
-    required: true,
+		default: () => {
+      const oneWeekFromNow = new Date();
+      oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7);
+      return oneWeekFromNow;
+    },
+    
   },
 });
 
