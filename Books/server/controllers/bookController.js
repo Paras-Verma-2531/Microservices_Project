@@ -1,5 +1,5 @@
 //createBook
-const bookOutput = require("../../bookUtils");
+const bookOutput = require("../bookUtils");
 const Book = require("../model/Book");
 const createBookController = async (req, res) => {
   try {
