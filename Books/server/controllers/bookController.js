@@ -1,4 +1,5 @@
 //createBook
+const bookOutput = require("../../bookUtils");
 const Book = require("../model/Book");
 const createBookController = async (req, res) => {
   try {
@@ -31,7 +32,11 @@ const deleteBookController = async (req, res) => {
 //listBook
 const showBookController = async (req, res) => {res.send('in show')};
 //listAllBooks
-const listAllBooksController = async (req, res) => {console.log('here in list');};
+const listAllBooksController = async (req, res) =>{
+  const Books=await Book.find();
+  const allBooks=Books.map(book=>bookOutput(book));
+  return res.json({allBooks})
+}
 module.exports = {
   createBookController,
   deleteBookController,
