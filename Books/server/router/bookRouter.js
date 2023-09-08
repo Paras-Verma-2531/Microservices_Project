@@ -8,8 +8,8 @@ const {
 const bookRouter = require("express").Router();
 //API's
 bookRouter.post("/create", createBookController);
-bookRouter.get("/book", showBookController);
+bookRouter.post("/book", showBookController);
 bookRouter.get("/all", listAllBooksController);
-bookRouter.post("/delete", deleteBookController);
+bookRouter.delete("/delete", deleteBookController);
 //export the bookRouter
 module.exports=bookRouter;

@@ -1,6 +1,6 @@
-//createBook
 const bookOutput = require("../bookUtils");
 const Book = require("../model/Book");
+//createBook
 const createBookController = async (req, res) => {
   try {
     const { title, author, numberOfPages, publisher } = req.body; //destruct the data from body
@@ -29,8 +29,17 @@ const deleteBookController = async (req, res) => {
     console.log(error);
   }
 };
-//listBook
-const showBookController = async (req, res) => {res.send('in show')};
+//list Details of Book
+const showBookController = async (req, res) => {
+  const {bookId}=req.body;
+  try {
+    const book = await Book.findById(bookId);
+    if(!book)return res.status(404).send("book not found");
+    return res.status(200).json(book)
+  } catch (error) {
+     return res.status(500).send(error);
+  }
+};
 //listAllBooks
 const listAllBooksController = async (req, res) =>{
   const Books=await Book.find();
