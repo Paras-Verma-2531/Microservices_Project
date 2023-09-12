@@ -1,17 +1,27 @@
 const bookOutput = require("../bookUtils");
 const Book = require("../model/Book");
+const cloudinary=require('cloudinary').v2;
 //createBook
 const createBookController = async (req, res) => {
   try {
-    const { title, author, numberOfPages, publisher } = req.body; //destruct the data from body
+    const { title, author, numberOfPages, publisher,bookImg } = req.body; //destruct the data from body
+    const cloudImg=await cloudinary.uploader.upload(bookImg,{
+      folder:'Books'
+    })
     const newBook = await Book.create({
       title,
       author,
       publisher,
       numberOfPages,
+      bookImg:
+      {
+        url:cloudImg.secure_url,
+        publicId:cloudImg.public_id
+      }
     });
     return res.json({newBook});
   } catch (error) {
+    console.log("the error is : ");
     console.log(error);
   }
 };
