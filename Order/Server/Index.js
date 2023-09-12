@@ -13,9 +13,9 @@ connectDb();
 require("./Model/Order");
 const Order = mongoose.model("Order");
 
-app.post("/Index", (req, res) => {
+app.post("/create", (req, res) => {
     var newOrder = {
-        customerId: new mongoose.Types.ObjectId(req.body.customerId),
+        customerId: req.body.customerId,
         bookId: req.body.bookId,
         initialDate: req.body.initialDate,
         deliveryDate: req.body.deliveryDate
@@ -23,13 +23,19 @@ app.post("/Index", (req, res) => {
 
     var order = new Order(newOrder);
     order.save().then(() => {
-        console.log("Order created successfully");
+        // console.log("Order created successfully");
         res.send("Order created successfully");
     }).catch((err) => {
         console.error(err);
         res.status(500).send("Error creating order");
     });
 });
+app.get("/orders",async(req,res)=>
+{
+    const orders=await Order.find();
+    console.log(orders);
+    return res.send("done");
+})
 
 // Listen to the server
 app.listen(PORT_NO, () => {
