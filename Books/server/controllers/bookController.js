@@ -13,7 +13,7 @@ const createBookController = async (req, res) => {
       author,
       publisher,
       numberOfPages,
-      bookImg:
+      bookImage:
       {
         url:cloudImg.secure_url,
         publicId:cloudImg.public_id
