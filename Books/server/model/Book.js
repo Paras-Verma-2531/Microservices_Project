@@ -5,6 +5,11 @@ const bookSchema = mongoose.Schema({
     required: true,
     type: String,
   },
+  bookImage:
+  {
+    publicId:String,
+    url:String
+  },
   author: {
     required: true,
     type: String,

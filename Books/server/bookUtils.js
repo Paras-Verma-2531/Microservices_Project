@@ -2,6 +2,7 @@
 const bookOutput = (book) => {
   return {
     Bookid: book._id,
+    bookImage:book.bookImage,
     title: book.title,
     author: book.author,
     publisher: book.publisher,
