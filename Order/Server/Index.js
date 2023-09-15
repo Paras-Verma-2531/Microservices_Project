@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express(); // Create an Express application
+const axios=require("axios");
 
 const connectDb = require('./dbconnect');
 const mongoose = require("mongoose");
@@ -36,6 +37,32 @@ app.get("/orders",async(req,res)=>
     console.log(orders);
     return res.send("done");
 })
+
+//
+ 
+app.get("/order/:id",(req,res)=>
+{
+    Order.findById(req.params.id).then((order)=>
+    {
+        if(order)
+        { 
+            axios.get("http://localhost:5555/customer/"+order.bookId).then((response)=>
+            {
+                var orderObject = {customerName:response.data.name,bookTitle:''}
+                axios.get("http://localhost:4001/s1/all/" + order.bookId).then((response)=>
+                {
+                    orderObject.bookTitle=response.data.title
+                    res.json(orderObject)
+                })
+            });
+            
+        }
+        else
+        {
+            res.send("Invalid Order")
+        }
+    });
+});
 
 // Listen to the server
 app.listen(PORT_NO, () => {
