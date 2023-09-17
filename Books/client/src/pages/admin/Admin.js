@@ -1,8 +1,11 @@
 import React from 'react'
+import CreateBook from '../../components/createBook/CreateBook'
 
 function Admin() {
   return (
-    <h3>This is admin's Page</h3>
+    <>
+    <CreateBook/>
+    </>
   )
 }
 

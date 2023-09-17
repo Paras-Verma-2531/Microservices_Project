@@ -8,7 +8,7 @@ const createBookController = async (req, res) => {
     const cloudImg=await cloudinary.uploader.upload(bookImg,{
       folder:'Books'
     })
-    const newBook = await Book.create({
+    await Book.create({
       title,
       author,
       publisher,
@@ -19,7 +19,7 @@ const createBookController = async (req, res) => {
         publicId:cloudImg.public_id
       }
     });
-    return res.json({newBook});
+    return res.send("book created");
   } catch (error) {
     console.log("the error is : ");
     console.log(error);
