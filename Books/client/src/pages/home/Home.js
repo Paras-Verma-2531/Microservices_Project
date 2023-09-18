@@ -1,8 +1,11 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 function Home() {
   return (
     <div className="home">
-      <h1>Hello</h1>
+      <Navbar/>
+      <Outlet/>
     </div>
   );
 }

@@ -1,0 +1,63 @@
+.createBook {
+  display: flex;
+  border: 2px solid black;
+  max-width: 700px;
+  padding: 15px 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  gap: 10px;
+
+  .right-part {
+    max-width: 90%;
+
+    .input-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .book-input {
+        display: block;
+        padding: 8px 12px;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 1rem;
+        outline: none;
+        border: 2px solid #c1cfb0;
+      }
+    }
+    .img-container {
+      margin-top: 20px;
+      .book-img {
+        width: 100%;
+        aspect-ratio: 1.2/1;
+        border-radius: 4px;
+      }
+    }
+    .bottom-part {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      align-items: center;
+      justify-content: space-between;
+      .labelImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        color: white;
+        background-color: #1688c7;
+        cursor: pointer;
+      }
+      .labelImage:hover {
+        background-color: #2176f7;
+      }
+      .inputImage {
+        display: none;
+        outline: none;
+      }
+    }
+  }
+}
