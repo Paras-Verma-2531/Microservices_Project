@@ -25,7 +25,7 @@ function SingleBook({ book }) {
         <h4 className="book-info-pages">{`Pages : ${book?.noOfPages}`}</h4>
         <div className="copy-to-cp">
           <p>
-            <p>{book?.bookId}</p>
+            <p>click here to copy BookId</p>
           </p>
           <GoCopy
             className="copy-icon"
