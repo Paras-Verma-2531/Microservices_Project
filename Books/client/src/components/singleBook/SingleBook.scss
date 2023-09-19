@@ -1,0 +1,15 @@
+.card
+{
+    border: 2px solid black;
+    padding: 2px 2px;
+    .book-title
+    {
+        text-align: center;
+    }
+    .book-info
+    {
+        color: #272829;
+    }
+    .author{font-size: 1.5rem;}
+    .publisher{font-size: 1.2rem;}
+}
