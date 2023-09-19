@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './ViewBooks.scss'
 import SingleBook from "../../components/singleBook/SingleBook";
 import { axiosClient } from ".././../utils/axiosClient";
 

@@ -8,6 +8,7 @@ function SingleBook({ book }) {
         className="card"
         style={{
           width: 320,
+          objectFit:"contain"
         }}
         bordered={false}
         cover={<img alt={book?.title} src={book?.bookImage?.url} />}

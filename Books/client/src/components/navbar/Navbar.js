@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="left-side">
-        <h2 className="header">BookPal</h2>
+        <h2 className="header" onClick={()=>navigate('/')}>BookPal</h2>
       </div>
       <div className="right-side">
         <Button type="primary"  size="large" onClick={() => navigate("/viewBooks")}>
