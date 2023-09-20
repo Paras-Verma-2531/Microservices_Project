@@ -7,7 +7,7 @@ function CreateBook() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [publisher, setPublisher] = useState("");
-  const [pages, setPages] = useState("0");
+  const [pages, setPages] = useState("");
   const [image, setImage] = useState("");
   //utility function
   function handleInputImage(e) {
@@ -48,18 +48,21 @@ function CreateBook() {
         <div className="input-section">
           <input
             type="text"
+            value={title}
             placeholder="Enter the Book Name"
             className="book-input"
             onChange={(e) => setTitle(e.target.value)}
           />
           <input
             type="text"
+            value={author}
             placeholder="Enter the Author Name"
             className="book-input"
             onChange={(e) => setAuthor(e.target.value)}
           />
           <input
             type="text"
+            value={publisher}
             placeholder="Enter the Publisher Name"
             className="book-input"
             onChange={(e) => setPublisher(e.target.value)}
@@ -67,6 +70,7 @@ function CreateBook() {
           <input
             type="text"
             placeholder="Enter the pages Number"
+            value={pages}
             className="book-input"
             onChange={(e) => setPages(e.target.value)}
           />

@@ -10,6 +10,6 @@ const bookRouter = require("express").Router();
 bookRouter.post("/create", createBookController);
 bookRouter.post("/book", showBookController);
 bookRouter.get("/all", listAllBooksController);
-bookRouter.delete("/delete", deleteBookController);
+bookRouter.post("/delete", deleteBookController);
 //export the bookRouter
 module.exports=bookRouter;
