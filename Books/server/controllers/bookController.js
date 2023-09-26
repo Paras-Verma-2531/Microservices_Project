@@ -30,7 +30,6 @@ const deleteBookController = async (req, res) => {
     const { bookIdToDelete } = req.body;
     //if book not present
     const bookToDelete = await Book.findById(bookIdToDelete);
-    console.log(bookIdToDelete);
     if (!bookToDelete) return res.send("Book Not Found");
     await Book.deleteOne({_id:bookIdToDelete });
     return res.send("Book deleted successfully");
