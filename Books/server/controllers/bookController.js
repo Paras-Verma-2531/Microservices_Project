@@ -21,7 +21,6 @@ const createBookController = async (req, res) => {
     });
     return res.send("book created");
   } catch (error) {
-    console.log("the error is : ");
     console.log(error);
   }
 };
@@ -31,10 +30,9 @@ const deleteBookController = async (req, res) => {
     const { bookIdToDelete } = req.body;
     //if book not present
     const bookToDelete = await Book.findById(bookIdToDelete);
-    console.log(bookToDelete);
-    if (!bookToDelete) return res.status;
+    if (!bookToDelete) return res.send("Book Not Found");
     await Book.deleteOne({_id:bookIdToDelete });
-    return res.send(200, "book deleted");
+    return res.send("Book deleted successfully");
   } catch (error) {
     console.log(error);
   }

@@ -1,7 +1,7 @@
 //util function to send only required data:
 const bookOutput = (book) => {
   return {
-    Bookid: book._id,
+    bookId: book._id,
     bookImage:book.bookImage,
     title: book.title,
     author: book.author,
