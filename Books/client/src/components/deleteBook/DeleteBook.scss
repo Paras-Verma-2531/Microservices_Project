@@ -1,0 +1,17 @@
+.deleteBook
+{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+   .input-box
+    {
+        display: flex;
+        padding: 10px 12px;
+        outline: none;
+        width: 70%;
+        border-radius: 5px;
+        border: 2px solid black;
+        margin-bottom:20px;
+    }
+    
+}

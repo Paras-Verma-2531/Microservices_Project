@@ -8,13 +8,24 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="left-side">
-        <h2 className="header" onClick={()=>navigate('/')}>BookWise</h2>
+        <h2 className="header" onClick={() => navigate("/")}>
+          BookWise
+        </h2>
       </div>
       <div className="right-side">
-        <Button type="primary"  size="large" onClick={() => navigate("/viewBooks")}>
+        <Button
+          type="primary"
+          size="large"
+          onClick={() => navigate("/viewBooks")}
+        >
           View Books
         </Button>
-        <img src={user} alt="user" className="user-img" onClick={()=>navigate('/admin')} />
+        <img
+          src={user}
+          alt="user"
+          className="user-img"
+          onClick={() => navigate("/admin")}
+        />
       </div>
     </div>
   );
