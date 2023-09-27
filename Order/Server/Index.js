@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express(); // Create an Express application
-const axios=require("axios");
+const cors = require('cors');
 
 const connectDb = require('./dbconnect');
 const mongoose = require("mongoose");
@@ -13,11 +13,14 @@ app.use(express.json()); // body-parser
 connectDb();
 require("./Model/Order");
 const Order = mongoose.model("Order");
+app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
 
 app.post("/create", (req, res) => {
     var newOrder = {
-        customerId: req.body.customerId,
-        bookId: req.body.bookId,
+        customerId: (req.body.customerId),
+        bookId: (req.body.bookId),
         initialDate: req.body.initialDate,
         deliveryDate: req.body.deliveryDate
     };
@@ -35,7 +38,7 @@ app.get("/orders",async(req,res)=>
 {
     const orders=await Order.find();
     console.log(orders);
-    return res.send("done");
+    return res.send(orders);
 })
 
 //
@@ -46,15 +49,17 @@ app.get("/order/:id",(req,res)=>
     {
         if(order)
         { 
-            axios.get("http://localhost:5555/customer/"+order.bookId).then((response)=>
+            axios.get("http://localhost:5555/customers/" + order.customerId).then((response)=>
             {
                 var orderObject = {customerName:response.data.name,bookTitle:''}
-                axios.get("http://localhost:4000/s1/all/" + order.bookId).then((response)=>
-                {
-                    orderObject.bookTitle=response.data.title
-                    res.json(orderObject)
-                })
-            });
+                // axios.get("http://localhost:4000/s1/all/" + order.bookId).then((response)=>
+                // {
+                //     orderObject.bookTitle=response.data.title
+                //     res.json(orderObject)
+                // })
+                console.log(response?.data?.name);
+                res.send("Quick response");
+            })
             
         }
         else
