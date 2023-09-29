@@ -4,4 +4,4 @@
 /node_modules
 /Customers/server/node_modules
 /Order/client/node_modules
-
+/Customers/client/node_modules
