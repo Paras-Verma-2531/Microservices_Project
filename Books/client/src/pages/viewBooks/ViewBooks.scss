@@ -1,6 +1,22 @@
-.viewBooks
-{
+.viewBooks {
+  height: 89vh;
+  position: relative;
+  background-image: url("../../assets/Background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  .books-content {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    padding: 5px;
+    backdrop-filter: blur(3px); /* Adjust the blur value as needed */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.2
+    ); /* Adjust the background color and opacity as needed */
+  }
 }

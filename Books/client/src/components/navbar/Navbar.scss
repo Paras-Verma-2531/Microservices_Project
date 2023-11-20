@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .navbar {
   display: flex;
-  height: 60px;
+  position: sticky;
+  z-index: 99;
+  height: 80px;
   padding: 10px 12px;
   border-radius: 2px;
   align-items: center;
   justify-content: space-between;
-  background-color: #282566;
+  background-color: #212121;
   .left-side {
     .header {
       font-size: 2rem;
