@@ -1,0 +1,29 @@
+.Hero {
+  height: 80vh;
+  background-image: url("../../assets/bookBackground.png");
+  background-size: contain;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  background-repeat: no-repeat;
+  .hero-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    user-select: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+    .heading {
+      font-size: 2.5rem;
+      color:#F1EAFF;
+    }
+    .description {
+      color: whitesmoke;
+      font-size: 1.5rem;
+    }
+  }
+}

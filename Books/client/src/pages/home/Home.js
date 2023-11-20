@@ -1,13 +1,12 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
+import React from 'react'
+import Hero from '../../components/hero/Hero'
+
 function Home() {
   return (
-    <div className="home">
-      <Navbar/>
-      <Outlet/>
+    <div className="Home">
+        <Hero/>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
