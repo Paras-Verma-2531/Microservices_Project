@@ -13,6 +13,8 @@ function Navbar() {
         </h2>
       </div>
       <div className="right-side">
+      <h3 className="signup" onClick={()=>{navigate('/login')}}>Login</h3>
+        <h3 className="signup" onClick={()=>{navigate('/signup')}}>signup</h3>
         <Button
           type="primary"
           size="large"
