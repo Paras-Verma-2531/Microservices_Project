@@ -1,14 +1,19 @@
 const express=require("express") //creating new express server
 const { Aggregate } = require("mongoose")
 const app=express() //creating an instance of express application
-
+const cors=require('cors');
 const mongoose=require("mongoose")
 
 const connectDb = require("./dbConnect")//connect to database
 
 const bodyParser=require("body-parser")//bodyparser
 app.use(express.json());//allows data to be received
-
+app.use(cors(
+    {
+        credentials:true,
+        origin:"http://localhost:3000"
+    }
+))
 
 //load customer model
 
@@ -16,7 +21,7 @@ require("../server/model/Customer")
 const Customer = mongoose.model("Customer")
 
 //API CREATING NEW CUSTOMER
-app.post("/index",(req,res)=>{
+app.post("/signup",(req,res)=>{
     var newCustomer={
         name: req.body.name,
         phone: req.body.phone,

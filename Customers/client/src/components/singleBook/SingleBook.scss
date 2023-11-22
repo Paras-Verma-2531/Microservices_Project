@@ -1,0 +1,36 @@
+.card {
+  border: 2px solid black;
+  padding: 5px 2px;
+  height: 55vh;
+  .book-title {
+    text-align: center;
+  }
+  .book-info {
+    color: #272829;
+  }
+  .book-image {
+    height: 210px;
+    width: 320px;
+    object-fit: contain;
+    border-radius: 5px;
+  }
+  .author {
+    font-size: 1.5rem;
+  }
+  .publisher {
+    font-size: 1.2rem;
+  }
+  .copy-to-cp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .copy-icon {
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      color: black;
+      cursor: pointer;
+    }
+    .copy-icon:hover{color: #3085C3;}
+  }
+}
